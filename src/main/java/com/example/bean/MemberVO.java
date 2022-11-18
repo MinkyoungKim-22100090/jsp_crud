@@ -2,7 +2,7 @@ package com.example.bean;
 import java.util.Date;
 
 public class MemberVO {
-    private int seq;
+    private int sid;
     private String userid;
     private String username;
     private String password;
@@ -12,51 +12,66 @@ public class MemberVO {
     private Date regdate;
     private int cnt;
 
-    public int getSeq() {
-        return seq;
+    public int getSid() {
+        return sid;
     }
-    public void setSeq(int seq) {
-        this.seq = seq;
+
+    public void setSeq(int sid) {
+        this.sid= sid;
     }
-    public String getT() {
+
+    public String getUserid() {
         return userid;
     }
-    public void setuserid(String userid) {
+
+    public void setUserid(String userid) {
         this.userid = userid;
     }
-    public String getusername() {
+
+    public String getUsername() {
         return username;
     }
-    public void setusername(String writer) {
+
+    public void setUsername(String username) {
         this.username = username;
     }
-    public String getpassword() {
+
+    public String getPassword() {
         return password;
     }
-    public void setpassword(String password) {
+
+    public void setPassword(String password) {
         this.password = password;
     }
-    public String getemail() {
-        return email;
-    }
-    public void setemail(String email) {
-        this.email = email;
-    }
-    public String getphoto() {
+
+    public String getPhoto() {
         return photo;
     }
-    public void setphoto(String photo) {
+
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
-    public String getpr() {
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPr() {
         return pr;
     }
-    public void setpr(String pr) {
+
+    public void setPr(String pr) {
         this.pr = pr;
     }
+
     public Date getRegdate() {
         return regdate;
     }
+
     public void setRegdate(Date regdate) {
         this.regdate = regdate;
     }
@@ -64,6 +79,7 @@ public class MemberVO {
     public int getCnt() {
         return cnt;
     }
+
     public void setCnt(int cnt) {
         this.cnt = cnt;
     }
