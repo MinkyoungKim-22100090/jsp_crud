@@ -16,7 +16,7 @@ public class MemberVO {
         return sid;
     }
 
-    public void setSeq(int sid) {
+    public void setSid(int sid) {
         this.sid= sid;
     }
 
