@@ -7,7 +7,7 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@page import="com.example.dao.BoardDAO, com.example.bean.BoardVO"%>
+<%@page import="com.example.dao.MemberDAO, com.example.bean.MemberVO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,14 +17,14 @@
 <body>
 
 <%
-  BoardDAO boardDAO = new BoardDAO();
+  MemberDAO MemberDAO = new MemberDAO();
   String id=request.getParameter("id");
-  BoardVO u=boardDAO.getBoard(Integer.parseInt(id));
+  MemberVO u=MemberDAO.getMember(Integer.parseInt(id));
 %>
 
 <h1>Edit Form</h1>
-<form action="editpost.jsp" method="post">
-  <input type="hidden" name="seq" value="<%=u.getSeq() %>"/>
+<form action="edit_ok.php" method="post">
+  <input type="hidden" name="seq" value="<%=u.getSid() %>"/>
   <table>
     <tr><td>Title:</td><td><input type="text" name="title" value="<%= u.getTitle()%>"/></td></tr>
     <tr><td>Writer:</td><td><input type="text" name="writer" value="<%= u.getWriter()%>" /></td></tr>

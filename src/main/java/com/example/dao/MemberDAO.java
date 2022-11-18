@@ -2,6 +2,8 @@ package com.example.dao;
 import com.example.bean.BoardVO;
 import com.example.bean.MemberVO;
 import com.example.util.JDBCUtil;
+
+import javax.servlet.http.HttpServlet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,6 +21,7 @@ public class MemberDAO {
     private final String M_LIST = "select * from Member order by regdate desc";
     private final String M_UPDATE = "update Member set userid=?, username=?, password=?,email=?,photo=?,pr=? where sid=?";
     private final String M_DELETE = "delete from Member where sid=?";
+
     public MemberVO getMember(int seq) {
         MemberVO one = new MemberVO();
         System.out.println("===> JDBC로 getMember() 기능 처리");
