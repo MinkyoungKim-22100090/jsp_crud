@@ -1,13 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: kimminkyoung
-  Date: 2022/11/18
-  Time: 5:06 PM
+  Date: 2022/11/21
+  Time: 1:12 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@page import="com.example.dao.MemberDAO, com.example.bean.MemberVO,java.util.*"%>
+<%@page import="com.common.dao.teamDAO, com.common.bean.teamVO,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -45,32 +45,38 @@
 <body>
 <h1>자유게시판</h1>
 <%
-    MemberDAO MemberDAO = new MemberDAO();
-    List<MemberVO> list = MemberDAO.getList();
+    teamDAO TeamDAO = new teamDAO();
+    List<teamVO> list = TeamDAO.getTEAMList();
     request.setAttribute("list",list);
 %>
 <table id="list" width="90%">
     <tr>
         <th>Id</th>
-        <th>Title</th>
-        <th>Writer</th>
-        <th>Content</th>
+        <th>Name</th>
+        <th>Grade</th>
+        <th>Major</th>
+        <th>Email</th>
+        <th>Photo</th>
+        <th>Detail</th>
         <th>Regdate</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
     <c:forEach items="${list}" var="u">
         <tr>
-            <td>${u.getSeq()}</td>
-            <td>${u.getTitle()}</td>
-            <td>${u.getWriter()}</td>
-            <td>${u.getContent()}</td>
+            <td>${u.getSid()}</td>
+            <td>${u.getName()}</td>
+            <td>${u.getGrade()}</td>
+            <td>${u.getMajor()}</td>
+            <td>${u.getEmail()}</td>
+            <td>${u.getPhoto()}</td>
+            <td>${u.getDetail()}</td>
             <td>${u.getRegdate()}</td>
             <td><a href="editform.jsp?id=${u.getSeq()}">Edit</a></td>
-            <td><a href="javascript:delete_ok('${u.getSeq()}')">Delete</a></td>
+            <td><a href="javascript:delete_ok('${u.getSid()}')">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
-<br/><a href="add_ok.php">Add New Post</a>
+<br/><a href="addform.jsp">Add New Post</a>
 </body>
 </html>

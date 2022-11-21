@@ -1,14 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: kimminkyoung
+  Date: 2022/11/21
+  Time: 8:18 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>Title</title>
 </head>
 <body>
-
-<jsp:forward page="posts.jsp" />
-
+    <jsp:forward page="view.jsp" />
 </body>
 </html>
